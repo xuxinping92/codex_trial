@@ -24,3 +24,12 @@ python city_builder.py
 - Multiple building/zone types
 - Population growth simulation
 - Basic economy simulation (taxes, upkeep, jobs, power)
+
+
+- `roguelike.py`: a turn-based roguelike dungeon crawler with procedural generation, inventory, enemy AI, fog of war, and combat.
+
+## Run Roguelike
+
+```bash
+python roguelike.py
+```
