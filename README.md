@@ -1,35 +1,66 @@
-# Python Mini Games & Simulations
+# Mini WeChat-like Messaging App
 
-This repository now includes:
+A full-stack mini messaging app with:
 
-- `tetris.py`: a Pygame Tetris implementation.
-- `city_builder.py`: a SimCity-style city builder simulation prototype.
+- User accounts (register/login)
+- Add friends
+- Private chat
+- Group chat
+- Message history
+- Image upload
+- Realtime message delivery with WebSocket
 
-## Run Tetris
+## Tech Stack
 
-```bash
-pip install pygame
-python tetris.py
-```
+- **Backend**: FastAPI + SQLAlchemy
+- **Database**: PostgreSQL
+- **Realtime**: FastAPI WebSocket
+- **Frontend**: React (Vite)
 
-## Run City Builder
-
-```bash
-python city_builder.py
-```
-
-### City Builder Features
-
-- Grid map
-- Multiple building/zone types
-- Population growth simulation
-- Basic economy simulation (taxes, upkeep, jobs, power)
-
-
-- `roguelike.py`: a turn-based roguelike dungeon crawler with procedural generation, inventory, enemy AI, fog of war, and combat.
-
-## Run Roguelike
+## Backend Setup
 
 ```bash
-python roguelike.py
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
+
+Create PostgreSQL DB:
+
+```sql
+CREATE DATABASE wechat_clone;
+```
+
+Update DB URL in `backend/app/database.py` if needed.
+
+Run backend:
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+## Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on `http://localhost:5173` and expects backend at `http://localhost:8000`.
+
+## Key API Endpoints
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `POST /friends/add`
+- `GET /friends`
+- `POST /groups`
+- `GET /groups`
+- `POST /messages/private`
+- `POST /messages/group`
+- `GET /messages/private/{friend_id}`
+- `GET /messages/group/{group_id}`
+- `POST /upload`
+- `GET /ws/{user_id}`
