@@ -1,23 +1,26 @@
-# 俄罗斯方块（Pygame）
+# Python Mini Games & Simulations
 
-一个使用 Python + Pygame 编写的俄罗斯方块小游戏。
+This repository now includes:
 
-## 运行方式
+- `tetris.py`: a Pygame Tetris implementation.
+- `city_builder.py`: a SimCity-style city builder simulation prototype.
 
-1. 安装依赖：
-   ```bash
-   pip install pygame
-   ```
-2. 启动游戏：
-   ```bash
-   python tetris.py
-   ```
+## Run Tetris
 
-## 操作说明
+```bash
+pip install pygame
+python tetris.py
+```
 
-- `← / →`：左右移动
-- `↑`：旋转
-- `↓`：软降
-- `空格`：硬降
-- `R`：重新开始
-- `ESC`：退出游戏
+## Run City Builder
+
+```bash
+python city_builder.py
+```
+
+### City Builder Features
+
+- Grid map
+- Multiple building/zone types
+- Population growth simulation
+- Basic economy simulation (taxes, upkeep, jobs, power)
